@@ -1,0 +1,59 @@
+/* POS screen fidelity override for the Figma Make reference */
+body:has(.pos-layout) .sidebar{width:242px;padding:0;background:#fff;border-right:1px solid #e1e4e8}
+body:has(.pos-layout) .brand{height:92px;padding:15px 11px 0;border-bottom:1px solid #e1e4e8;display:block}
+body:has(.pos-layout) .brand-mark{display:none}
+body:has(.pos-layout) .brand b{font-size:24px;line-height:30px;color:#0b0f19}
+body:has(.pos-layout) .brand small{font-size:13px;color:#64748b;margin-top:0}
+body:has(.pos-layout) .sidebar nav{padding:19px 4px 0;gap:3px}
+body:has(.pos-layout) .nav{height:48px;border-radius:9px;padding:0 16px;gap:14px;font-size:16px;font-weight:400;color:#334155}
+body:has(.pos-layout) .nav.active{background:#eaf3ff;color:#155eef}
+body:has(.pos-layout) .sidebar-bottom{height:74px;padding:15px 18px;border-top:1px solid #e1e4e8}
+body:has(.pos-layout) .main{margin-left:242px;background:#f8f9fa}
+body:has(.pos-layout) .main>header{display:none}
+body:has(.pos-layout) .content{padding:21px 0 0}
+body:has(.pos-layout) .pos-layout{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:0;min-height:calc(100vh - 21px);align-items:stretch}
+body:has(.pos-layout) .products-panel{background:#f8f9fa;border:0;border-radius:0;padding:0 32px;margin:0}
+body:has(.pos-layout) .toolbar{height:36px;display:flex;gap:16px;margin:0 0 24px}
+body:has(.pos-layout) .toolbar .search{height:36px}
+body:has(.pos-layout) .toolbar .search input{height:36px;background:#f1f2f4;border:0;border-radius:8px;padding-left:40px}
+body:has(.pos-layout) .toolbar .search>span{top:5px;left:12px}
+body:has(.pos-layout) .toolbar select{height:36px;width:192px;border:0;background:#f1f2f4;border-radius:8px}
+body:has(.pos-layout) .products-panel:before{content:'Point of Sale';display:block;font-size:30px;line-height:36px;font-weight:700;color:#0b0f19;margin:0 0 15px}
+body:has(.pos-layout) .product-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+body:has(.pos-layout) .product-card{height:155px;border-radius:14px;padding:16px;gap:7px;box-shadow:none}
+body:has(.pos-layout) .product-card .product-thumb,body:has(.pos-layout) .product-card .add-btn{display:none}
+body:has(.pos-layout) .product-card>b{font-size:17px;font-weight:500;line-height:20px}
+body:has(.pos-layout) .product-card small{font-size:12px}
+body:has(.pos-layout) .product-card strong{font-size:18px;line-height:24px;margin-top:1px}
+body:has(.pos-layout) .product-top{margin-bottom:3px}
+body:has(.pos-layout) .badge,body:has(.pos-layout) .tag{font-size:12px;line-height:22px;height:22px;padding:0 9px;border-radius:7px}
+body:has(.pos-layout) .badge{background:#eef1f4;color:#0f172a}
+body:has(.pos-layout) .tag{background:#fff;border:1px solid #e2e5e9}
+body:has(.pos-layout) .cart-panel{width:380px;position:fixed;right:0;top:0;bottom:0;margin:0;padding:0;background:#fff;border:0;border-left:1px solid #e0e3e8;border-radius:0;z-index:2;display:flex;flex-direction:column}
+body:has(.pos-layout) .cart-panel .panel-head{height:65px;box-sizing:border-box;padding:15px 16px;margin:0 0 0;border-bottom:1px solid #e5e7eb;display:block}
+body:has(.pos-layout) .cart-panel .panel-head h2{font-size:19px;margin:0;font-weight:650}
+body:has(.pos-layout) .cart-panel .panel-head p{display:none}
+body:has(.pos-layout) .cart-item{margin:16px 16px 0;border:1px solid #dfe3e8;border-radius:14px;padding:14px 12px 12px;display:grid;grid-template-columns:1fr auto;gap:0;background:#fff}
+body:has(.pos-layout) .cart-main b{font-size:16px;font-weight:600}
+body:has(.pos-layout) .cart-main small{font-size:12px;margin-top:4px}
+body:has(.pos-layout) .cart-item>.icon-btn{grid-column:2;grid-row:1}
+body:has(.pos-layout) .cart-item>.qty{grid-column:1;grid-row:2;margin-top:11px}
+body:has(.pos-layout) .cart-item>strong{grid-column:2;grid-row:2;margin-top:11px;font-size:14px}
+body:has(.pos-layout) .qty{gap:13px}
+body:has(.pos-layout) .qty button{width:36px;height:34px;border-radius:8px}
+body:has(.pos-layout) .checkout-box{margin-top:auto;border-top:1px solid #e1e4e8;padding:17px 16px 15px}
+body:has(.pos-layout) .checkout-box>input{height:36px;background:#f1f2f4;border:0;margin-bottom:18px}
+body:has(.pos-layout) .checkout-box:before{content:'Metode Pembayaran';display:block;font-size:13px;color:#49627d;margin:0 0 10px}
+body:has(.pos-layout) .pay-methods{gap:8px}
+body:has(.pos-layout) .pay-methods button{height:62px;border-radius:8px;gap:5px}
+body:has(.pos-layout) .pay-methods button.selected{background:#030015;border-color:#030015;color:#fff}
+body:has(.pos-layout) .pay-methods button.gopay.selected{background:#fff;border-color:#00a9e8;color:#00a9e8}
+body:has(.pos-layout) .pay-methods span{font-size:12px}
+body:has(.pos-layout) .summary{margin-top:16px;padding-top:14px}
+body:has(.pos-layout) .summary .grand{font-size:18px}
+body:has(.pos-layout) .summary .grand strong{font-size:19px}
+body:has(.pos-layout) .primary{width:100%;height:41px;margin-top:16px;background:#eb0d18;border-radius:8px}
+@media(max-width:1100px){body:has(.pos-layout) .sidebar{width:210px}body:has(.pos-layout) .main{margin-left:210px}body:has(.pos-layout) .pos-layout{grid-template-columns:minmax(0,1fr) 350px}body:has(.pos-layout) .cart-panel{width:350px}body:has(.pos-layout) .products-panel{padding-left:22px;padding-right:22px}body:has(.pos-layout) .product-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+body:has(.pos-layout) .nav:nth-child(2){font-size:0}
+body:has(.pos-layout) .nav:nth-child(2)::after{content:'POS';font-size:16px}
+body:has(.pos-layout) .sidebar nav:after{content:'▧   PRD';display:block;border-top:1px solid #edf0f3;margin:10px 12px 0;padding:25px 16px 0;color:#64748b;font-size:14px}
