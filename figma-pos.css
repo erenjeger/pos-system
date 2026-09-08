@@ -58,9 +58,9 @@ body:has(.pos-layout) .primary{width:100%;height:41px;margin-top:16px;background
 body:has(.pos-layout) .nav:nth-child(2){font-size:0}
 body:has(.pos-layout) .nav:nth-child(2)::after{content:'POS';font-size:16px}
 
-/* Brand & navigation */
+/* Bones App branding */
 .brand b{font-size:0 !important}
-.brand b::after{content:'Bones App';font-size:inherit}
+.brand b::after{content:'Bones App';font-size:24px;line-height:30px;color:#0b0f19}
 .brand small{display:none !important}
 .sidebar nav .nav-divider{display:none !important}
 .sidebar nav > .nav:last-child{display:none !important}
