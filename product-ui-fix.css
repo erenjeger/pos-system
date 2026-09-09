@@ -1,0 +1,87 @@
+/* Product image presentation */
+body:has(.pos-layout) .product-card{
+  height:220px!important;
+  padding:12px!important;
+  gap:6px!important;
+  overflow:hidden!important;
+}
+body:has(.pos-layout) .product-card .product-thumb{
+  display:flex!important;
+  order:1!important;
+  width:100%!important;
+  height:112px!important;
+  min-height:112px!important;
+  max-height:112px!important;
+  flex:0 0 112px!important;
+  margin:0 0 5px!important;
+  padding:0!important;
+  overflow:hidden!important;
+  border-radius:10px!important;
+  background:#eef2f6!important;
+  align-items:center!important;
+  justify-content:center!important;
+}
+body:has(.pos-layout) .product-card .product-thumb img{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  min-width:100%!important;
+  min-height:100%!important;
+  object-fit:cover!important;
+  object-position:center!important;
+}
+body:has(.pos-layout) .product-card>b{order:2!important}
+body:has(.pos-layout) .product-card small{order:3!important}
+body:has(.pos-layout) .product-card strong{order:4!important}
+
+/* Product image upload */
+#profit-product-modal .product-image-upload{
+  display:block!important;
+  margin-top:16px!important;
+  padding:14px!important;
+  border:1px dashed #b8c4d3!important;
+  border-radius:10px!important;
+  background:#f8fafc!important;
+}
+#profit-product-modal .product-image-upload label{
+  display:flex!important;
+  flex-direction:column!important;
+  gap:7px!important;
+  font-weight:600!important;
+  color:#334155!important;
+}
+#profit-product-modal .product-image-upload input[type=file]{
+  display:block!important;
+  width:100%!important;
+  padding:8px!important;
+  border:1px solid #d8dee7!important;
+  border-radius:7px!important;
+  background:#fff!important;
+  box-sizing:border-box!important;
+}
+#profit-product-modal .product-image-upload small{
+  display:block!important;
+  margin-top:2px!important;
+  color:#64748b!important;
+  font-size:11px!important;
+  font-weight:400!important;
+}
+#profit-product-modal .product-image-preview{
+  display:flex!important;
+  width:100%!important;
+  height:150px!important;
+  margin-top:10px!important;
+  align-items:center!important;
+  justify-content:center!important;
+  overflow:hidden!important;
+  border-radius:9px!important;
+  background:#eef2f6!important;
+  color:#94a3b8!important;
+  font-size:12px!important;
+}
+#profit-product-modal .product-image-preview img{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+}
