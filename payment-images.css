@@ -1,0 +1,7 @@
+/* Product photo layout for Payment */
+body:has(.pos-layout) .product-card{height:178px!important;position:relative!important;overflow:hidden!important}
+body:has(.pos-layout) .product-card .product-thumb{display:flex!important;position:absolute!important;left:16px!important;right:16px!important;top:44px!important;width:auto!important;height:60px!important;min-height:60px!important;max-height:60px!important;margin:0!important;padding:0!important;align-items:center!important;justify-content:center!important;overflow:hidden!important;border-radius:9px!important;background:#f4f6f8!important;z-index:1!important}
+body:has(.pos-layout) .product-card .product-thumb img{display:block!important;width:100%!important;height:100%!important;min-width:100%!important;min-height:100%!important;object-fit:cover!important}
+body:has(.pos-layout) .product-card>b{display:block!important;position:absolute!important;left:16px!important;right:16px!important;top:110px!important;margin:0!important;z-index:2!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important}
+body:has(.pos-layout) .product-card small{display:block!important;position:absolute!important;left:16px!important;top:132px!important;margin:0!important;z-index:2!important}
+body:has(.pos-layout) .product-card strong{display:block!important;position:absolute!important;left:16px!important;top:151px!important;margin:0!important;z-index:2!important}
