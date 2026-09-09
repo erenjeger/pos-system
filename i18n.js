@@ -20,7 +20,8 @@
     'Master product: harga retail, harga jual, dan margin dihitung otomatis.':'Product master: retail price, selling price, and margin are calculated automatically.',
     'Lengkapi data produk':'Please complete the product information.','Harga jual tidak boleh lebih kecil dari harga retail':'Selling price cannot be lower than retail price','SKU harus unik':'SKU must be unique',
     'QR Gopay akan muncul saat checkout':'The GoPay QR will appear at checkout','QR Tunai akan muncul saat checkout':'The Cash QR will appear at checkout','QR Kartu akan muncul saat checkout':'The Card QR will appear at checkout','QR QRIS akan muncul saat checkout':'The QRIS QR will appear at checkout',
-    'Walk-in Customer':'Walk-in Customer'
+    'Walk-in Customer':'Walk-in Customer',
+    '7-day sales':'Penjualan 7 hari','Units sold':'Unit terjual','Active days':'Hari aktif','Top product':'Produk terlaris','Actual transaction data is used. Daily bars combine all products sold on that date.':'Data transaksi aktual digunakan. Grafik harian menggabungkan seluruh produk yang terjual pada tanggal tersebut.'
   };
   const reverse = Object.fromEntries(Object.entries(dict).map(([id,en]) => [en,id]));
   const paymentNames = {Tunai:'Cash',Kartu:'Card',QRIS:'QRIS',Gopay:'GoPay',Cash:'Tunai',Card:'Kartu','GoPay':'Gopay'};
@@ -29,32 +30,31 @@
     let s = exact(value);
     if (s !== value) return s;
     if (lang === 'en') {
-      s = s.replace(/^Stok:\s*(\d+)$/i, 'Stock: $1');
-      s = s.replace(/^(\d+)\s+item$/i, (_, n) => `${n} item${Number(n) === 1 ? '' : 's'}`);
-      s = s.replace(/^QR\s+(Tunai|Kartu|QRIS|Gopay)\s+akan muncul saat checkout$/i, (_, p) => `The ${paymentNames[p] || p} QR will appear at checkout`);
-      s = s.replace(/^Bayar via\s+(Tunai|Kartu|QRIS|Gopay)$/i, (_, p) => `Pay via ${paymentNames[p] || p}`);
-      s = s.replace(/(💵|▣)\s*Tunai\b/g, '$1 Cash').replace(/(💳|▤)\s*Kartu\b/g, '$1 Card').replace(/(📱|▯)\s*Gopay\b/g, '$1 GoPay');
-      s = s.replace(/^＋\s*Tambah Produk$/i, '＋ Add Product').replace(/^＋\s*Tambah$/i, '＋ Add');
-      s = s.replace(/^\s*(\d+)\s+items?\s*·/i, (_, n) => `${n} item${Number(n) === 1 ? '' : 's'} ·`);
+      s=s.replace(/^Stok:\s*(\d+)$/i,'Stock: $1').replace(/^(\d+)\s+item$/i,(_,n)=>`${n} item${Number(n)===1?'':'s'}`);
+      s=s.replace(/^QR\s+(Tunai|Kartu|QRIS|Gopay)\s+akan muncul saat checkout$/i,(_,p)=>`The ${paymentNames[p]||p} QR will appear at checkout`);
+      s=s.replace(/^Bayar via\s+(Tunai|Kartu|QRIS|Gopay)$/i,(_,p)=>`Pay via ${paymentNames[p]||p}`);
+      s=s.replace(/(💵|▣)\s*Tunai\b/g,'$1 Cash').replace(/(💳|▤)\s*Kartu\b/g,'$1 Card').replace(/(📱|▯)\s*Gopay\b/g,'$1 GoPay');
+      s=s.replace(/^＋\s*Tambah Produk$/i,'＋ Add Product').replace(/^＋\s*Tambah$/i,'＋ Add');
+      s=s.replace(/^\s*(\d+)\s+items?\s*·/i,(_,n)=>`${n} item${Number(n)===1?'':'s'} ·`);
     } else {
-      s = s.replace(/^Stock:\s*(\d+)$/i, 'Stok: $1');
-      s = s.replace(/^(\d+)\s+items?$/i, '$1 item');
-      s = s.replace(/^The\s+(Cash|Card|QRIS|GoPay)\s+QR will appear at checkout$/i, (_, p) => `QR ${paymentNames[p] || p} akan muncul saat checkout`);
-      s = s.replace(/^Pay via\s+(Cash|Card|QRIS|GoPay)$/i, (_, p) => `Bayar via ${paymentNames[p] || p}`);
-      s = s.replace(/(💵|▣)\s*Cash\b/g, '$1 Tunai').replace(/(💳|▤)\s*Card\b/g, '$1 Kartu').replace(/(📱|▯)\s*GoPay\b/g, '$1 Gopay');
-      s = s.replace(/^＋\s*Add Product$/i, '＋ Tambah Produk').replace(/^＋\s*Add$/i, '＋ Tambah');
+      s=s.replace(/^Stock:\s*(\d+)$/i,'Stok: $1').replace(/^(\d+)\s+items?$/i,'$1 item');
+      s=s.replace(/^The\s+(Cash|Card|QRIS|GoPay)\s+QR will appear at checkout$/i,(_,p)=>`QR ${paymentNames[p]||p} akan muncul saat checkout`);
+      s=s.replace(/^Pay via\s+(Cash|Card|QRIS|GoPay)$/i,(_,p)=>`Bayar via ${paymentNames[p]||p}`);
+      s=s.replace(/(💵|▣)\s*Cash\b/g,'$1 Tunai').replace(/(💳|▤)\s*Card\b/g,'$1 Kartu').replace(/(📱|▯)\s*GoPay\b/g,'$1 Gopay');
+      s=s.replace(/^＋\s*Add Product$/i,'＋ Tambah Produk').replace(/^＋\s*Add$/i,'＋ Tambah');
+      s=s.replace(/^\s*(\d+)\s+items?\s*·/i,'$1 item ·');
     }
     return s;
   }
-  function translateText(node) { const raw=node.nodeValue, trimmed=raw.trim(); if(!trimmed)return; const translated=dynamic(trimmed); if(translated!==trimmed)node.nodeValue=raw.replace(trimmed,translated); }
-  function translateNode(node) {
+  function translateText(node){const raw=node.nodeValue,trimmed=raw.trim();if(!trimmed)return;const translated=dynamic(trimmed);if(translated!==trimmed)node.nodeValue=raw.replace(trimmed,translated);}
+  function translateNode(node){
     if(node.nodeType===3){translateText(node);return;}
     if(node.nodeType!==1||node.id==='bones-lang'||node.closest('#bones-lang'))return;
     ['placeholder','title','aria-label'].forEach(attr=>{const value=node.getAttribute(attr);if(value){const translated=dynamic(value);if(translated!==value)node.setAttribute(attr,translated);}});
     node.childNodes.forEach(translateNode);
   }
   function translateAlert(message){return lang==='en'?(dict[message]||dynamic(message)):(reverse[message]||dynamic(message));}
-  const nativeAlert=window.alert.bind(window); window.alert=message=>nativeAlert(translateAlert(String(message)));
+  const nativeAlert=window.alert.bind(window);window.alert=message=>nativeAlert(translateAlert(String(message)));
   function addToggle(){if(document.getElementById('bones-lang'))return;const el=document.createElement('div');el.id='bones-lang';el.innerHTML='<button type="button" data-lang="id">ID</button><span>/</span><button type="button" data-lang="en">EN</button>';el.querySelectorAll('button').forEach(button=>button.onclick=()=>{lang=button.dataset.lang;localStorage.setItem(KEY,lang);renderLanguage();});document.body.appendChild(el);}
   let rendering=false,observer;
   function renderLanguage(){if(rendering||!document.body)return;rendering=true;if(observer)observer.disconnect();translateNode(document.body);addToggle();document.querySelectorAll('#bones-lang button').forEach(button=>button.classList.toggle('active',button.dataset.lang===lang));document.documentElement.lang=lang==='en'?'en':'id';document.title='Bones App';if(observer)observer.observe(document.body,{childList:true,subtree:true});rendering=false;}
