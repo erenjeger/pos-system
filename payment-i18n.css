@@ -1,0 +1,2 @@
+html[lang="en"] body:has(.pos-layout) .checkout-box:before{content:"Payment Methods"}
+html[lang="en"] body:has(.pos-layout) .products-panel:before{content:"Payment"}
