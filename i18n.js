@@ -13,15 +13,14 @@
     'Subtotal':'Subtotal','Total':'Total','Tunai':'Cash','Kartu':'Card','QRIS':'QRIS','Gopay':'GoPay','Bayar via':'Pay via',
     'Cari produk atau SKU...':'Search product or SKU...','Cari ID transaksi atau nama pelanggan...':'Search transaction ID or customer name...','Semua Kategori':'All Categories','＋ Tambah':'＋ Add',
     'Stok':'Stock','Kategori':'Category','Harga':'Price','Harga Retail':'Retail Price','Harga Jual':'Selling Price','SKU':'SKU','Pelanggan':'Customer','Tanggal & Waktu':'Date & Time','Items':'Items','Pembayaran':'Payment','Aksi':'Actions',
-    'Edit':'Edit','Hapus':'Delete','Simpan':'Save','Batal':'Cancel','Tambah Produk':'Add Product','Edit Produk':'Edit Product','Lengkapi informasi produk':'Complete product information',
+    'Edit':'Edit','Hapus':'Delete','Simpan':'Save','Batal':'Cancel','Tambah Produk':'Add Product','Edit Produk':'Edit Product','Lengkapi informasi produk':'Complete product information','Lengkapi informasi produk.':'Complete product information.','Lengkapi data produk':'Please complete the product information.','Upload JPG, PNG, atau WebP. Maksimal 2 MB.':'Upload JPG, PNG, or WebP. Maximum 2 MB.','Foto Produk':'Product Photo','Preview foto produk':'Product photo preview','Ukuran foto maksimal 2 MB':'Maximum photo size is 2 MB','Format foto harus JPG, PNG atau WebP':'Photo format must be JPG, PNG, or WebP',
     'Nama Produk':'Product Name','Makanan':'Food','Minuman':'Beverage','Snack':'Snack','Nilai Inventori':'Inventory Value','Total Produk':'Total Products','Margin per item:':'Margin per item:','Margin kotor':'Gross margin','Total Keuntungan':'Total Profit',
     'Detail Transaksi':'Transaction Details','Tanggal':'Date','ID':'ID','Pembayaran Gopay':'GoPay Payment','Pembayaran QRIS':'QRIS Payment',
     'Scan QR berikut menggunakan aplikasi pembayaran pelanggan.':'Scan the QR code using the customer payment app.','Pembayaran berlaku selama 05:00':'Payment valid for 05:00','Pembayaran Diterima':'Payment Received','Batalkan':'Cancel','Scan QR':'Scan QR',
     'Master product: harga retail, harga jual, dan margin dihitung otomatis.':'Product master: retail price, selling price, and margin are calculated automatically.',
-    'Lengkapi data produk':'Please complete the product information.','Harga jual tidak boleh lebih kecil dari harga retail':'Selling price cannot be lower than retail price','SKU harus unik':'SKU must be unique',
+    'Harga jual tidak boleh lebih kecil dari harga retail':'Selling price cannot be lower than retail price','SKU harus unik':'SKU must be unique',
     'QR Gopay akan muncul saat checkout':'The GoPay QR will appear at checkout','QR Tunai akan muncul saat checkout':'The Cash QR will appear at checkout','QR Kartu akan muncul saat checkout':'The Card QR will appear at checkout','QR QRIS akan muncul saat checkout':'The QRIS QR will appear at checkout',
-    'Walk-in Customer':'Walk-in Customer',
-    '7-day sales':'Penjualan 7 hari','Units sold':'Unit terjual','Active days':'Hari aktif','Top product':'Produk terlaris','Actual transaction data is used. Daily bars combine all products sold on that date.':'Data transaksi aktual digunakan. Grafik harian menggabungkan seluruh produk yang terjual pada tanggal tersebut.'
+    'Walk-in Customer':'Walk-in Customer','7-day sales':'7-day sales','Units sold':'Units sold','Active days':'Active days','Top product':'Top product','Actual transaction data is used. Daily bars combine all products sold on that date.':'Actual transaction data is used. Daily bars combine all products sold on that date.'
   };
   const reverse = Object.fromEntries(Object.entries(dict).map(([id,en]) => [en,id]));
   const paymentNames = {Tunai:'Cash',Kartu:'Card',QRIS:'QRIS',Gopay:'GoPay',Cash:'Tunai',Card:'Kartu','GoPay':'Gopay'};
